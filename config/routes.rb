@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get  '/index', to: 'users#index'
   post '/signup',  to: 'users#create'
  
-  get  '/micropost',  to: 'microposts#new'
-  post  '/micropost',  to: 'microposts#create'
+  resources :microposts
+  get  '/indexMicro',  to: 'microposts#indexMicro'
   resources :users do
     member do
     end

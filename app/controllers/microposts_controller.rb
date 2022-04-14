@@ -1,18 +1,22 @@
 class MicropostsController < ApplicationController
   # is new getting called when 
   def new
-    @micropst = Micropst.new
+    @micropost = Micropost.new
   end
 
   def create
-    @micropst = Micropst.new(micropost_params)
-    if @micropst.save
+    @micropost = Micropost.new(micropost_params)
+    if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
     end
   end
 
   def micropost_params
-    params.require(:micropst).permit(:content)
+    params.require(:micropost).permit(:content)
+  end
+
+  def indexMicro
+    @micros = Micropost.all
   end
 end
