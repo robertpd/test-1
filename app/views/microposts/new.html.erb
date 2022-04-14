@@ -2,10 +2,14 @@
 <% provide(:title, 'New Post') %>
 <h1>New Post</h1>
 
-<%= form_with(model: @microposts, local: true) do |f| %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @micropost, local: true) do |f| %>
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+      </div>
+      <%= f.submit "Post", class: "btn btn-primary" %>
+    
+    <% end %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
- 
-<% end %>
+</div>
