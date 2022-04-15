@@ -8,6 +8,9 @@
         <br>
         <h5>Email: <h5>
         <i><%= @user.email %><i>
+        <br>
+        <%= link_to "Post", new_micropost_path(:user => @user.id), class: "btn btn-lg btn-primary" %>
+        <br>
       </h1>
   </aside>
   <div class="col-md-8">

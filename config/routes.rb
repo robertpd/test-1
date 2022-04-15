@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
  
   resources :microposts
-  get  '/indexMicro',  to: 'microposts#indexMicro'
   resources :users do
     member do
     end
